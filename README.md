@@ -16,4 +16,9 @@
 
 - phpmyadmin dashboard
 
+# Images of dummy database used
+
+![image](https://user-images.githubusercontent.com/80748976/222891254-a829f2b7-51d6-444b-97b2-e4a0feb6908b.png)
+
+
 
