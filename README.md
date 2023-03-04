@@ -23,7 +23,7 @@
 ![image](https://user-images.githubusercontent.com/80748976/222891254-a829f2b7-51d6-444b-97b2-e4a0feb6908b.png)
 
 - Registered Student
--
+
 ![image](https://user-images.githubusercontent.com/80748976/222891344-49958d9c-6af8-45fe-8c09-abf5377c4233.png)
 
 
