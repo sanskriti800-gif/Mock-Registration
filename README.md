@@ -6,7 +6,7 @@
 
 # Registration Page
 
-- Student can register courses for the mock with different slot or else error is generated
+- If there’s a clash in slots for the selected course, or any request that violates the constraints provided above, return a 400 status code.
 
 # Scripting Language Used
 
