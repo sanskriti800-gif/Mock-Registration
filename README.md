@@ -1,18 +1,18 @@
 # Mock-Registration
 
-#Login Page
+# Login Page
 
 - Student can login for the registration if registation nunber or password not found on the database 400 Bad Request Error is generated
 
-#Registration Page
+# Registration Page
 
 - Student can register courses for the mock with different slot or else error is generated
 
-#Scripting Language Used
+# Scripting Language Used
 
 - PHP 
 
-#Software Tool
+# Software Tool
 
 - phpmyadmin dashboard
 
