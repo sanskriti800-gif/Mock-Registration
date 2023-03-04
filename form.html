@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+    <script>
+        function validation() {
+            var userid = document.getElementById('userid').value;
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var psw = document.getElementById('psw').value;
+            var psw_repeat = document.getElementById('psw_repeat').value;
+
+            var usercheck = /^[a-zA-Z0-9]{10}$/;
+            var fnamecheck = /^[A-Za-z]{3,20}$/;
+            var lnamecheck = /^[A-Za-z]{3,20}$/;
+            var emailcheck = /^[A-Za-z_0-9.]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+            var pswcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9@#$%^&*]{8,15}$/;
+
+            if (usercheck.test(userid)) {
+                document.getElementById('usererror').innerHTML = "";
+            } else {
+                document.getElementById('usererror').innerHTML = "**User id is invalid";
+                return false;
+            }
+            if (fnamecheck.test(fname)) {
+                document.getElementById('fnameerror').innerHTML = "";
+            } else {
+                document.getElementById('fnameerror').innerHTML = "**Should be atleast 3 character";
+                return false;
+            }
+            if (lnamecheck.test(lname)) {
+                document.getElementById('lnameerror').innerHTML = "";
+            } else {
+                document.getElementById('lnameerror').innerHTML = "**Should be atleast 3 character";
+                return false;
+            }
+            if (emailcheck.test(email)) {
+                document.getElementById('mail').innerHTML = "";
+            } else {
+                document.getElementById('mail').innerHTML = "**Email-id is invalid";
+                return false;
+            }
+            if (pswcheck.test(psw)) {
+                document.getElementById('pass').innerHTML = "";
+            } else {
+                document.getElementById('pass').innerHTML = "**Should contain 8 to 15 character with use of special character, number and letter ";
+                return false;
+            }
+        }
+        function valid(){
+            var psw = document.getElementById('psw').value;
+            var psw_repeat = document.getElementById('psw_repeat').value;
+            if (psw !== psw_repeat) {
+                document.getElementById('usesubmitted').innerHTML = "";
+                document.getElementById('conpass').innerHTML = "**Password does not match";
+            } else {
+                document.getElementById('usesubmitted').innerHTML = "**You are successfully registered!!";
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>COLLAGE REGISTRATION</h1>
+
+    <div class="form">
+    <form id="reg" action="reg.php" method="post" onsubmit="">
+        <span id="usesubmitted" class="font-weight-bold"></span><br>
+        <legend><b>Create an account</b></legend>
+        <div class="form-group">
+            <label for="userid">REGISTRATION NUMBER </label><sup style="color:red">*</sup><br><span id="usererror" class="text-danger font-weight-bold"></span><br>
+            <input type="text" placeholder="Enter your Registration Number" class="form-control" name="userid" id="userid" oninput="return validation()" required><br>   
+        </div>
+        <div class="form-group" style="display: flex;flex-direction: row;width: max-content;">
+            <div style="padding-right: 50px;">
+            <label for="fname">FIRST NAME</label><sup style="color:red">*</sup><br><span id="fnameerror" class="text-danger font-weight-bold"></span></br>
+            <input type="text" placeholder="Enter your First name" class="form-control" name="fname" id="fname" oninput="return validation()" required><br>
+            </div>
+            <div>
+            <label for="lname">LAST NAME</label><br><span id="lnameerror" class="text-danger font-weight-bold"></span></br>
+            <input type="text" placeholder="Enter your Last name" class="form-control" name="lname" id="lname" oninput="return validation()" ><br>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">EMAIL ID</label><sup style="color:red">*</sup><br><span id="mail" class="text-danger font-weight-bold"></span></br>
+            <input type="email" placeholder="Enter your Email-id" class="form-control" name="email" id="email" oninput="return validation()" required><br>
+        </div>
+        <div class="form-group">
+            <label for="psw">PASSWORD</label><sup style="color:red">*</sup><br><span id="pass" class="text-danger font-weight-bold"></span></br>
+            <input type="password" placeholder="Enter Password" class="form-control" name ="psw" id="psw" oninput="return validation()" required><br>   
+        </div>
+        <div class="form-group">
+            <label for="psw_repeat">CONFIRM PASSWORD</label><sup style="color:red">*</sup><br><span id="conpass" class="text-danger font-weight-bold"></span></br>
+            <input type="password" placeholder="Re-enter Password" class="form-control" id="psw_repeat" oninput="return validation()" required><br>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" id="submit" name="submit" onsubmit="return valid()">Register</button>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+            <button type="reset" class="btn btn-danger"><a href="login.html">Login</a></button>
+        </div>
+    </form>
+    </div>
+
+</body>
+
+</html>
